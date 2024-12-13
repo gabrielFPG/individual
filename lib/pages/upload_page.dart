@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:crud/services/pick_images.dart';
 import 'package:flutter/material.dart';
 
@@ -31,17 +30,30 @@ class _UploadPageState extends State<UploadPage> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             ElevatedButton(
-                onPressed: () async {
-                  final file = await getImageFromGalery();
-                  setState(() {
-                    imageFile = file;
-                  });
-                },
-                child: const Text("Seleccionar imagen")),
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              onPressed: () async {
+                final file = await getImageFromGalery();
+                setState(() {
+                  imageFile = file;
+                });
+              },
+              child: const Text("Seleccionar imagen"),
+            ),
             ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                onPressed: () {},
-                child: const Text("Subir imagen"))
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              onPressed: () {},
+              child: const Text("Subir imagen"),
+            ),
           ],
         ),
       ],
